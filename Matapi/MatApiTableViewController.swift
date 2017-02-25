@@ -18,6 +18,8 @@ class MatApiTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,22 +28,31 @@ class MatApiTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    //for row in latestSearchResult{
+    //for more in row{
+    //    print more.name
+    //}
+    //}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-               return 5
+               return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return latestSearchResult.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = "I'm in : \(indexPath.section) and row : \(indexPath.row)"
-
+        let item = latestSearchResult[indexPath.row] as[String: Any]
+        if let name = item["name"] as? String {
+            cell.textLabel?.text = name
+        }
+        
         return cell
     }
     
