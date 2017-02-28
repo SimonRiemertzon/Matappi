@@ -10,7 +10,8 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
-    var fruit : String?
+    var itemName : String = ""
+    var itemNumber : Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()

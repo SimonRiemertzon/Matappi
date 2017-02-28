@@ -11,10 +11,9 @@ import UIKit
 class MatApiTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var searchController : UISearchController!
-    var searchResult : [String] = []
+   
     
-    let data = ["Bli","Hej","Hopp","Fall","Erall","La", ]
-    
+    var data : [[String: Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +29,11 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
 
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text?.lowercased() {
-            searchResult = data.filter({item in item.lowercased().contains(searchText)})
+            getData(searchText: searchText, onData: { (data) in
+                self.data = data
+            })
         } else {
-            searchResult = []
+            data = []
         }
         tableView.reloadData()
     }
@@ -46,16 +47,6 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
         return searchController.isActive
     }
 
-    
-    
-
-    // MARK: - Table view data source
-    
-    //for row in latestSearchResult{
-    //for more in row{
-    //    print more.name
-    //}
-    //}
 
     override func numberOfSections(in tableView: UITableView) -> Int {
                return 1
@@ -63,12 +54,11 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shouldUseSearchResult {
-            return searchResult.count
+            return self.data.count
             
         } else {
             return data.count
         }
-       // return latestSearchResult.count
     }
 
     
@@ -76,15 +66,18 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
 
         if shouldUseSearchResult {
-            cell.textLabel?.text = searchResult[indexPath.row]
-            cell.fruit = searchResult[indexPath.row]
-
+            
+            let name = self.data[indexPath.row]["name"] as! String
+            cell.textLabel?.text = name
+            cell.itemName = name
+            
         } else {
            // let item = latestSearchResult[indexPath.row] as[String: Any]
            // if let name = item["name"] as? String {
            //     cell.textLabel?.text = name
-            cell.textLabel?.text = data[indexPath.row]
-            cell.fruit = data[indexPath.row]
+            let name = self.data[indexPath.row]["name"] as! String
+            cell.textLabel?.text = name
+            cell.itemName = name
             }
 
         
@@ -132,7 +125,7 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let cell = sender as? ItemTableViewCell {
-            segue.destination.title = cell.fruit
+            segue.destination.title = cell.itemName
         }
         
         // Get the new view controller using segue.destinationViewController.
