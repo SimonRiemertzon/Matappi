@@ -8,24 +8,47 @@
 
 import UIKit
 
-class MatApiTableViewController: UITableViewController {
+class MatApiTableViewController: UITableViewController, UISearchResultsUpdating {
 
+    var searchController : UISearchController!
+    var searchResult : [String] = []
+    
+    let data = ["Bli","Hej","Hopp","Fall","Erall","La", ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+       // definesPresentationContext
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        tableView.tableHeaderView = searchController.searchBar
         tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text?.lowercased() {
+            searchResult = data.filter({item in item.lowercased().contains(searchText)})
+        } else {
+            searchResult = []
+        }
+        tableView.reloadData()
     }
+    
+    var shouldUseSearchResult : Bool {
+        if let searchText = searchController.searchBar.text {
+            if searchText.isEmpty {
+                return false
+            }
+        }
+        return searchController.isActive
+    }
+
+    
+    
 
     // MARK: - Table view data source
     
@@ -40,18 +63,30 @@ class MatApiTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return latestSearchResult.count
+        if shouldUseSearchResult {
+            return searchResult.count
+            
+        } else {
+            return data.count
+        }
+       // return latestSearchResult.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let item = latestSearchResult[indexPath.row] as[String: Any]
-        if let name = item["name"] as? String {
-            cell.textLabel?.text = name
-        }
+        if shouldUseSearchResult {
+            cell.textLabel?.text = searchResult[indexPath.row]
+        } else {
+           // let item = latestSearchResult[indexPath.row] as[String: Any]
+           // if let name = item["name"] as? String {
+           //     cell.textLabel?.text = name
+            cell.textLabel?.text = data[indexPath.row]
+            }
+
+        
+        
         
         return cell
     }

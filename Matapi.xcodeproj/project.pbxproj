@@ -12,6 +12,7 @@
 		DB56C8EB1E534ABB008E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8E91E534ABB008E33C5 /* Main.storyboard */; };
 		DB56C8ED1E534ABB008E33C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8EC1E534ABB008E33C5 /* Assets.xcassets */; };
 		DB56C8F01E534ABB008E33C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8EE1E534ABB008E33C5 /* LaunchScreen.storyboard */; };
+		DB81B0681E64BC8D0049DD54 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */; };
 		DBE40CF81E55F4E300A70FFF /* MatApiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		DB56C8EC1E534ABB008E33C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB56C8EF1E534ABB008E33C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB56C8F11E534ABB008E33C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatApiTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				DB56C8EE1E534ABB008E33C5 /* LaunchScreen.storyboard */,
 				DB56C8F11E534ABB008E33C5 /* Info.plist */,
 				DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */,
+				DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */,
 			);
 			path = Matapi;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB81B0681E64BC8D0049DD54 /* ItemTableViewCell.swift in Sources */,
 				DB56C8E81E534ABB008E33C5 /* MainViewController.swift in Sources */,
 				DB56C8E61E534ABB008E33C5 /* AppDelegate.swift in Sources */,
 				DBE40CF81E55F4E300A70FFF /* MatApiTableViewController.swift in Sources */,
