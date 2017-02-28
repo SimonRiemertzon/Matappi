@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB39317A1E65A95C00B61968 /* JsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3931791E65A95C00B61968 /* JsonHandler.swift */; };
 		DB56C8E61E534ABB008E33C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56C8E51E534ABB008E33C5 /* AppDelegate.swift */; };
 		DB56C8E81E534ABB008E33C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56C8E71E534ABB008E33C5 /* MainViewController.swift */; };
 		DB56C8EB1E534ABB008E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8E91E534ABB008E33C5 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB3931791E65A95C00B61968 /* JsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHandler.swift; sourceTree = "<group>"; };
 		DB56C8E21E534ABB008E33C5 /* Matapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB56C8E51E534ABB008E33C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB56C8E71E534ABB008E33C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				DB56C8F11E534ABB008E33C5 /* Info.plist */,
 				DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */,
 				DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */,
+				DB3931791E65A95C00B61968 /* JsonHandler.swift */,
 			);
 			path = Matapi;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB81B0681E64BC8D0049DD54 /* ItemTableViewCell.swift in Sources */,
+				DB39317A1E65A95C00B61968 /* JsonHandler.swift in Sources */,
 				DB56C8E81E534ABB008E33C5 /* MainViewController.swift in Sources */,
 				DB56C8E61E534ABB008E33C5 /* AppDelegate.swift in Sources */,
 				DBE40CF81E55F4E300A70FFF /* MatApiTableViewController.swift in Sources */,

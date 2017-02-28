@@ -19,8 +19,7 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // definesPresentationContext
-        
+        definesPresentationContext = true
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -74,15 +73,18 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
 
         if shouldUseSearchResult {
             cell.textLabel?.text = searchResult[indexPath.row]
+            cell.fruit = searchResult[indexPath.row]
+
         } else {
            // let item = latestSearchResult[indexPath.row] as[String: Any]
            // if let name = item["name"] as? String {
            //     cell.textLabel?.text = name
             cell.textLabel?.text = data[indexPath.row]
+            cell.fruit = data[indexPath.row]
             }
 
         
@@ -126,15 +128,16 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ 
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let cell = sender as? ItemTableViewCell {
+            segue.destination.title = cell.fruit
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+  
 
 }

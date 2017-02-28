@@ -52,10 +52,10 @@ class MainViewController: UIViewController {
                 
             } else {
                 NSLog("Failed to create URL")
-            }
-            
-            
         }
+        
+            
+    }
     }
 
 
