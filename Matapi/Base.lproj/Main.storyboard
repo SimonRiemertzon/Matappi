@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1553" y="123"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Info View Controller-->
         <scene sceneID="5hU-UM-GWK">
             <objects>
-                <viewController id="IEi-X6-VMF" sceneMemberID="viewController">
+                <viewController id="IEi-X6-VMF" customClass="ItemInfoViewController" customModule="Matapi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iSv-70-KnV"/>
                         <viewControllerLayoutGuide type="bottom" id="d6i-gb-E3p"/>

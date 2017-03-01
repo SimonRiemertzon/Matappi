@@ -68,8 +68,10 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
         if shouldUseSearchResult {
             
             let name = self.data[indexPath.row]["name"] as! String
+            let number = self.data[indexPath.row]["number"] as! Int
             cell.textLabel?.text = name
             cell.itemName = name
+            cell.itemNumber = number
             
         } else {
            // let item = latestSearchResult[indexPath.row] as[String: Any]
@@ -85,6 +87,22 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let cell = sender as? ItemTableViewCell {
+            segue.destination.title = cell.itemName
+            //segue.destination.itemNumber  - Varför funkar inte detta? - Svar från lärare, du måste casta den till DIN viewcontroller. - Hur ska jag veta det? - Svar från lärare, jag har visat det
+            
+            let vc = segue.destination as! ItemInfoViewController
+            vc.itemNumber = cell.itemNumber
+            vc.itemName = cell.itemName
+        }
+        
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
     
 
     /*
@@ -122,15 +140,6 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     */
  
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let cell = sender as? ItemTableViewCell {
-            segue.destination.title = cell.itemName
-        }
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-  
+
 
 }
