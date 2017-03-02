@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB39317A1E65A95C00B61968 /* JsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3931791E65A95C00B61968 /* JsonHandler.swift */; };
-		DB39317C1E66C82A00B61968 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB39317B1E66C82A00B61968 /* ItemInfoViewController.swift */; };
+		DB39317E1E66EFCF00B61968 /* ItemInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB39317D1E66EFCF00B61968 /* ItemInfoTableViewController.swift */; };
+		DB3931821E670C7B00B61968 /* ItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3931811E670C7B00B61968 /* ItemInfoTableViewCell.swift */; };
 		DB56C8E61E534ABB008E33C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56C8E51E534ABB008E33C5 /* AppDelegate.swift */; };
 		DB56C8E81E534ABB008E33C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB56C8E71E534ABB008E33C5 /* MainViewController.swift */; };
 		DB56C8EB1E534ABB008E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8E91E534ABB008E33C5 /* Main.storyboard */; };
@@ -20,7 +21,8 @@
 
 /* Begin PBXFileReference section */
 		DB3931791E65A95C00B61968 /* JsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHandler.swift; sourceTree = "<group>"; };
-		DB39317B1E66C82A00B61968 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
+		DB39317D1E66EFCF00B61968 /* ItemInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoTableViewController.swift; sourceTree = "<group>"; };
+		DB3931811E670C7B00B61968 /* ItemInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DB56C8E21E534ABB008E33C5 /* Matapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB56C8E51E534ABB008E33C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB56C8E71E534ABB008E33C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +73,8 @@
 				DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */,
 				DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */,
 				DB3931791E65A95C00B61968 /* JsonHandler.swift */,
-				DB39317B1E66C82A00B61968 /* ItemInfoViewController.swift */,
+				DB39317D1E66EFCF00B61968 /* ItemInfoTableViewController.swift */,
+				DB3931811E670C7B00B61968 /* ItemInfoTableViewCell.swift */,
 			);
 			path = Matapi;
 			sourceTree = "<group>";
@@ -148,10 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB39317E1E66EFCF00B61968 /* ItemInfoTableViewController.swift in Sources */,
 				DB81B0681E64BC8D0049DD54 /* ItemTableViewCell.swift in Sources */,
-				DB39317C1E66C82A00B61968 /* ItemInfoViewController.swift in Sources */,
 				DB39317A1E65A95C00B61968 /* JsonHandler.swift in Sources */,
 				DB56C8E81E534ABB008E33C5 /* MainViewController.swift in Sources */,
+				DB3931821E670C7B00B61968 /* ItemInfoTableViewCell.swift in Sources */,
 				DB56C8E61E534ABB008E33C5 /* AppDelegate.swift in Sources */,
 				DBE40CF81E55F4E300A70FFF /* MatApiTableViewController.swift in Sources */,
 			);

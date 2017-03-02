@@ -48,7 +48,7 @@ import Foundation
 
     }
 
-func getFoodItemData(searchNumber : String, onData : @escaping ([String: Any]) -> Void) {
+func getFoodItemData(searchNumber : String, onData : @escaping ([String: Double]) -> Void) {
     let urlString = "http://www.matapi.se/foodstuff/\(searchNumber)"
     
     if let safeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: safeUrlString) {
@@ -62,7 +62,8 @@ func getFoodItemData(searchNumber : String, onData : @escaping ([String: Any]) -
                 do {
                     if let parsed = try JSONSerialization.jsonObject(with: actualData, options: jsonOptions) as? [String:Any] {
                         NSLog("Parsed")
-                        onData(parsed)
+                        
+                        onData(parsed["nutrientValues"] as! [String : Double])
                     } else {
                         NSLog("Failed to cast to json")
                     }

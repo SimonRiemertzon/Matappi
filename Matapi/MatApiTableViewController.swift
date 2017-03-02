@@ -94,7 +94,7 @@ class MatApiTableViewController: UITableViewController, UISearchResultsUpdating 
             segue.destination.title = cell.itemName
             //segue.destination.itemNumber  - Varför funkar inte detta? - Svar från lärare, du måste casta den till DIN viewcontroller. - Hur ska jag veta det? - Svar från lärare, jag har visat det
             
-            let vc = segue.destination as! ItemInfoViewController
+            let vc = segue.destination as! ItemInfoTableViewController
             vc.itemNumber = cell.itemNumber
             vc.itemName = cell.itemName
         }
