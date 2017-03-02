@@ -9,11 +9,23 @@
 import UIKit
 
 class ItemInfoTableViewController: UITableViewController {
+    
     @IBOutlet weak var nutritionalValueLabel: UILabel!
     
     var itemName : String = ""
     var itemNumber : Int = 0
+    
     var data : [String: Double] = [:]
+    var kcal : Double = 0.0
+    var carbs : Double = 0.0
+    
+    func setNutritionValue (kcalValue: Double, carbs: Double){
+        let nutVal = kcalValue + carbs
+        
+        nutritionalValueLabel.text? = "Nyttighetsvärde : " + String(nutVal)
+    }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +38,6 @@ class ItemInfoTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         })
-        
-        func nutritionalValue (kcalValue: Double, ){
-            
-        }
         
         
         
@@ -78,6 +86,7 @@ class ItemInfoTableViewController: UITableViewController {
             cell.infoLabel.text = "kcal"
             if let energyKcal = data["energyKcal"] {
                 cell.valueLabel.text = "\(energyKcal)"
+                kcal = energyKcal
             } else {
                 cell.valueLabel.text = "..."
             }
@@ -85,6 +94,7 @@ class ItemInfoTableViewController: UITableViewController {
         else if indexPath.row == 2{
             cell.infoLabel.text = "Kolhydrater"
             if let carbohydrates = data["carbohydrates"] {
+                carbs = carbohydrates
                 cell.valueLabel.text = "\(carbohydrates)"
             } else {
                 cell.valueLabel.text = "..."
@@ -92,8 +102,10 @@ class ItemInfoTableViewController: UITableViewController {
         }
         
 
-
+        setNutritionValue(kcalValue: kcal , carbs: carbs)
+        
         return cell
+        
     }
     
 
