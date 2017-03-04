@@ -6,10 +6,15 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var resultView: UITextView!
+    @IBOutlet weak var star: UIImageView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "MatAppi"
+        
+        animateStars()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -17,20 +22,15 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "goToSearchForFoodSegue", sender: self)
     }
     
-    //func onData(data : [[String:Any]]) {
-    
-    //}
-    
-    @IBAction func search(_ sender: Any) {
-        //"force unwrap"? ska vara okej ibland
-        
-       
-        
-        //getData(searchText: searchField.text, onData: onData)
-        
-        
-        
+    func animateStars() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.star.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        }) { finished in
+            NSLog("Star animation done. Finishd = \(finished)")
+            self.star.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
     }
+
 }
 
 

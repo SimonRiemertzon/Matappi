@@ -18,9 +18,19 @@ class ItemInfoTableViewController: UITableViewController {
     var data : [String: Double] = [:]
     var kcal : Double = 0.0
     var carbs : Double = 0.0
+    var sugar : Double = 0.0
+    var protein : Double = 0.0
     
-    func setNutritionValue (kcalValue: Double, carbs: Double){
-        let nutVal = kcalValue + carbs
+    func setNutritionValue (_ kcalValue: Double, _ carbs: Double, _ sugar: Double, _ protein: Double){
+        var nutVal = 5
+        
+        if sugar > 20 {
+            nutVal - 1
+        }
+        
+        if carbs 
+        
+        
         
         nutritionalValueLabel.text? = "Nyttighetsvärde : " + String(nutVal)
     }
@@ -74,9 +84,10 @@ class ItemInfoTableViewController: UITableViewController {
         
         
         if indexPath.row == 0 {
-            cell.infoLabel.text = "eKj"
-            if let energyKj = data ["energyKj"] {
-                cell.valueLabel.text = "\(energyKj)"
+            cell.infoLabel.text = "Protein"
+            if let protein = data ["protein"] {
+                cell.valueLabel.text = "\(protein)"
+                self.protein = protein
             } else {
                 cell.valueLabel.text = "..."
             }
@@ -100,9 +111,19 @@ class ItemInfoTableViewController: UITableViewController {
                 cell.valueLabel.text = "..."
             }
         }
+        else if indexPath.row == 3{
+            cell.infoLabel.text = "Socker"
+            if let saccharose = data["saccharose"] {
+                sugar = saccharose
+                cell.valueLabel.text = "\(saccharose)"
+            } else {
+                cell.valueLabel.text = "..."
+            }
+        }
         
-
-        setNutritionValue(kcalValue: kcal , carbs: carbs)
+        
+    
+        setNutritionValue(kcal, carbs, sugar, protein )
         
         return cell
         
