@@ -23,31 +23,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favoriter " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEV-rv-bXo">
-                                <rect key="frame" x="65" y="588" width="72" height="21"/>
+                                <rect key="frame" x="0.0" y="588" width="203" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Sök Mat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IU-oo-7E7">
-                                <rect key="frame" x="214" y="588" width="200" height="21"/>
+                                <rect key="frame" x="215" y="588" width="199" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="food-png-6 fullsize" translatesAutoresizingMaskIntoConstraints="NO" id="EGF-rf-1Ai">
-                                <rect key="frame" x="88" y="249" width="239" height="239"/>
+                                <rect key="frame" x="88" y="248.66666666666669" width="239" height="239.00000000000006"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWB-Cw-6vf">
-                                <rect key="frame" x="284" y="617" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Search_ballonicon2.png"/>
-                                <connections>
-                                    <action selector="goToSearchFood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYB-Tb-BNN"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8q-6C-FV3">
                                 <rect key="frame" x="0.0" y="72" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,8 +65,16 @@
                                 <rect key="frame" x="53" y="617" width="97" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointedStar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-Gc-LFF">
-                                <rect key="frame" x="109" y="269" width="70" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bz-EM-ROu">
+                                <rect key="frame" x="278" y="617" width="73" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Search_ballonicon2.png"/>
+                                <connections>
+                                    <action selector="goToSearchFood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWG-X6-iAZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-Gc-LFF">
+                                <rect key="frame" x="114" y="276" width="70" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -217,6 +217,6 @@
         <image name="Search_ballonicon2.png" width="300" height="300"/>
         <image name="Star_icon_stylized.png" width="252" height="240"/>
         <image name="food-png-6 fullsize" width="350" height="350"/>
-        <image name="pointedStar.png" width="2000" height="2000"/>
+        <image name="star.png" width="2000" height="2000"/>
     </resources>
 </document>

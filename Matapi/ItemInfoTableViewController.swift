@@ -22,16 +22,26 @@ class ItemInfoTableViewController: UITableViewController {
     var protein : Double = 0.0
     
     func setNutritionValue (_ kcalValue: Double, _ carbs: Double, _ sugar: Double, _ protein: Double){
-        var nutVal = 5
+        var nutVal : Double = 5
         
         if sugar > 20 {
-            nutVal - 1
+            nutVal -= 1
+        } else {
+            nutVal += 2
         }
         
-        if carbs 
+        if carbs > 50 {
+            nutVal -= 1
+        } else {
+            nutVal += 1
+        }
         
-        
-        
+        if protein > 50 {
+            nutVal += 1
+        } else {
+            nutVal += 0.5
+        }
+  
         nutritionalValueLabel.text? = "Nyttighetsvärde : " + String(nutVal)
     }
     

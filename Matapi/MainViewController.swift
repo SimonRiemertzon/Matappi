@@ -8,29 +8,52 @@ class MainViewController: UIViewController {
     @IBOutlet weak var resultView: UITextView!
     @IBOutlet weak var star: UIImageView!
     
-    
+    var queue = DispatchQueue.main
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "MatAppi"
         
-        animateStars()
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.star.layer.removeAllAnimations()
+        self.star.transform = CGAffineTransform.identity
+        
+        queue.async {
+            self.animateStars()
+        }
+    }
+    
     
     @IBAction func goToSearchFood(_ sender: Any) {
         performSegue(withIdentifier: "goToSearchForFoodSegue", sender: self)
     }
     
     func animateStars() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.star.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        }) { finished in
-            NSLog("Star animation done. Finishd = \(finished)")
-            self.star.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options:[.autoreverse, .repeat],
+                       animations : {
+                        self.star.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)})
+        { finished in
+            UIView.animate(withDuration: 1.0,
+                           delay: 0,
+                           options: [.curveEaseOut, .beginFromCurrentState],
+                           animations: {
+                            self.star.transform = CGAffineTransform.identity
+            },
+                           completion: nil
+                
+            )
+            NSLog("Star animation done. Finished = \(finished)")
         }
+        UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat], animations: { self.star.transform = CGAffineTransform(scaleX: 2.5, y: 2.5) })
     }
-
+    
+    
 }
 
 

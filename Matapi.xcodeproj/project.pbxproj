@@ -15,7 +15,10 @@
 		DB56C8EB1E534ABB008E33C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8E91E534ABB008E33C5 /* Main.storyboard */; };
 		DB56C8ED1E534ABB008E33C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8EC1E534ABB008E33C5 /* Assets.xcassets */; };
 		DB56C8F01E534ABB008E33C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB56C8EE1E534ABB008E33C5 /* LaunchScreen.storyboard */; };
-		DB6A53B41E6A006C00FBFEAB /* Photos in Resources */ = {isa = PBXBuildFile; fileRef = DB6A53B31E6A006C00FBFEAB /* Photos */; };
+		DB6A53B91E6C3E9000FBFEAB /* pointedStar.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6A53B51E6C3E9000FBFEAB /* pointedStar.png */; };
+		DB6A53BA1E6C3E9000FBFEAB /* Search_ballonicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6A53B61E6C3E9000FBFEAB /* Search_ballonicon2.png */; };
+		DB6A53BB1E6C3E9000FBFEAB /* Star_icon_stylized.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6A53B71E6C3E9000FBFEAB /* Star_icon_stylized.png */; };
+		DB6A53BC1E6C3E9000FBFEAB /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6A53B81E6C3E9000FBFEAB /* star.png */; };
 		DB81B0681E64BC8D0049DD54 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */; };
 		DBE40CF81E55F4E300A70FFF /* MatApiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +34,10 @@
 		DB56C8EC1E534ABB008E33C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB56C8EF1E534ABB008E33C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB56C8F11E534ABB008E33C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB6A53B31E6A006C00FBFEAB /* Photos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Photos; path = Matapi/Photos; sourceTree = "<group>"; };
+		DB6A53B51E6C3E9000FBFEAB /* pointedStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pointedStar.png; path = Photos/pointedStar.png; sourceTree = "<group>"; };
+		DB6A53B61E6C3E9000FBFEAB /* Search_ballonicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Search_ballonicon2.png; path = Photos/Search_ballonicon2.png; sourceTree = "<group>"; };
+		DB6A53B71E6C3E9000FBFEAB /* Star_icon_stylized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Star_icon_stylized.png; path = Photos/Star_icon_stylized.png; sourceTree = "<group>"; };
+		DB6A53B81E6C3E9000FBFEAB /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Photos/star.png; sourceTree = "<group>"; };
 		DB81B0671E64BC8D0049DD54 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		DBE40CF71E55F4E300A70FFF /* MatApiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatApiTableViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
@@ -50,7 +56,6 @@
 		DB56C8D91E534ABB008E33C5 = {
 			isa = PBXGroup;
 			children = (
-				DB6A53B31E6A006C00FBFEAB /* Photos */,
 				DB56C8E41E534ABB008E33C5 /* Matapi */,
 				DB56C8E31E534ABB008E33C5 /* Products */,
 			);
@@ -78,6 +83,10 @@
 				DB3931791E65A95C00B61968 /* JsonHandler.swift */,
 				DB39317D1E66EFCF00B61968 /* ItemInfoTableViewController.swift */,
 				DB3931811E670C7B00B61968 /* ItemInfoTableViewCell.swift */,
+				DB6A53B51E6C3E9000FBFEAB /* pointedStar.png */,
+				DB6A53B61E6C3E9000FBFEAB /* Search_ballonicon2.png */,
+				DB6A53B71E6C3E9000FBFEAB /* Star_icon_stylized.png */,
+				DB6A53B81E6C3E9000FBFEAB /* star.png */,
 			);
 			path = Matapi;
 			sourceTree = "<group>";
@@ -142,9 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB56C8F01E534ABB008E33C5 /* LaunchScreen.storyboard in Resources */,
+				DB6A53BA1E6C3E9000FBFEAB /* Search_ballonicon2.png in Resources */,
+				DB6A53B91E6C3E9000FBFEAB /* pointedStar.png in Resources */,
 				DB56C8ED1E534ABB008E33C5 /* Assets.xcassets in Resources */,
 				DB56C8EB1E534ABB008E33C5 /* Main.storyboard in Resources */,
-				DB6A53B41E6A006C00FBFEAB /* Photos in Resources */,
+				DB6A53BC1E6C3E9000FBFEAB /* star.png in Resources */,
+				DB6A53BB1E6C3E9000FBFEAB /* Star_icon_stylized.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
